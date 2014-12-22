@@ -1,0 +1,13 @@
+#!/bin/sh
+echo "Curves found:\t" `grep ", (" $1 | wc -l`
+echo "Timeouts:\t" `grep --ignore-case "timed out" $1 | wc -l`
+echo "No rational:\t" `grep "Group does not seem to be attached" $1 | wc -l`
+echo "Not recognized:\t" `grep "None" $1 | wc -l`
+echo "wp not found:\t" `grep "Trouble finding wp by enumeration" $1 | wc -l`
+echo "Prime too large\t" `grep "Prime too large to integrate" $1 | wc -l`
+echo "Exceptions:\t" `grep -v "Group does not seem to be attached" $1 | grep -v "Starting" | grep -v --ignore-case "timed out" | grep -v ", (" | grep -v "None" | grep -v "Trouble finding wp by enumeration" | grep -v "Prime too large to integrate" | grep -v "#" | grep -v '^$' | wc -l`
+echo ">> out of range\t" `grep "out of range" $1 | wc -l`
+echo "Total lines:\t" `grep -v "#" $1 | grep -v '^$' | wc -l`
+echo "--------------------"
+#echo "Exception list:\n"
+#grep -v "Group does not seem to be attached" $1 | grep -v "Starting" | grep -v --ignore-case "timed out" | grep -v ", (" | grep -v "None" | grep -v "Trouble finding wp by enumeration" | grep -v "Prime too large to integrate" | grep -v "#" | grep -v "out of range" | grep -v '^$'

@@ -1,0 +1,250 @@
+%-----------------------------------------------------------------------
+% Beginning of mcom-l-template.tex
+%-----------------------------------------------------------------------
+%
+%     This is a topmatter template file for MCOM for use with AMS-LaTeX.
+%
+%     Templates for various common text, math and figure elements are
+%     given following the \end{document} line.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%     Remove any commented or uncommented macros you do not use.
+
+\documentclass[oneside,landscape]{amsart}
+\usepackage{longtable}
+\usepackage[cmtip,all]{xy}
+\usepackage[latin1]{inputenc}
+\usepackage{amssymb,amsmath}
+\usepackage{verbatim}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{url}
+\usepackage{ifthen}
+\usepackage{geometry}
+\usepackage[colorlinks]{hyperref}
+\hypersetup{citecolor=blue}
+%\usepackage{todonotes}
+%\usepackage{ mathrsfs }
+
+\usepackage{array}
+
+\usepackage{array}
+\newtheorem{maintheorem}{Main Theorem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{claim}{Claim}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem*{JLhyp}{(JL)}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+
+
+\newcommand\N{\ensuremath{\mathbb N}}
+\newcommand\Z{\ensuremath{\mathbb Z}}
+\newcommand\A{\ensuremath{\mathbb A}}
+\newcommand\Q{\ensuremath{\mathbb Q}}
+\newcommand\R{\ensuremath{\mathbb R}}
+\newcommand\C{\ensuremath{\mathbb C}}
+\newcommand\F{\ensuremath{\mathbb F}}
+\newcommand\Qb{{\overline\Q}}
+\newcommand\Zb{{\overline\Z}}
+\newcommand\Fb{{\overline\F}}
+\newcommand\cM{\ensuremath{\mathcal M}}
+\def\cO{{\ensuremath{\mathcal O}}}
+
+\newcommand\ab{\operatorname{ab}}
+\newcommand\Aut{\operatorname{Aut}}
+\newcommand\Br{\operatorname{Br}}
+\newcommand\car{\operatorname{car}}
+\newcommand\cl{\operatorname{cl}}
+\newcommand\Cl{\operatorname{\cal C\ell}}
+\newcommand\coim{\operatorname{coim}}
+\newcommand\cont{\operatorname{cont}}
+\newcommand\coker{\operatorname{coker}}
+\newcommand\Cores{\operatorname{Cores}}
+\newcommand\cycl{\operatorname{cycl}}
+\newcommand\disc{\operatorname{disc}}
+\newcommand\Disc{\operatorname{Disc}}
+\newcommand\Div{\operatorname{Div}}
+\newcommand\End{\operatorname{End}}
+\newcommand\Ext{\operatorname{Ext}}
+\newcommand\Frob{\operatorname{Frob}}
+\newcommand\Gal{\operatorname{Gal}}
+\newcommand\GL{\operatorname{GL}}
+\newcommand\Hom{\operatorname{Hom}}
+\newcommand\Id{\operatorname{Id}}
+\newcommand\im{\operatorname{im}}
+\newcommand\Ind{\operatorname{Ind}}
+\newcommand\Inf{\operatorname{Inf}}
+\newcommand\Inn{\operatorname{Inn}}
+\newcommand\Irr{\operatorname{Irr}}
+\newcommand\M{\operatorname{M}}
+\newcommand\Mat{\operatorname{Mat}}
+\newcommand\Mor{\operatorname{Mor}}
+\newcommand\Nm{\operatorname{Nm}}
+\newcommand\nr{\operatorname{nr}}
+\newcommand\Ob{\operatorname{Ob}}
+\newcommand\opp{\operatorname{opp}}
+\newcommand\ord{\operatorname{ord}}
+\newcommand\Out{\operatorname{Out}}
+\newcommand\Pic{\operatorname{Pic}}
+\newcommand\PGL{\operatorname{PGL}}
+\newcommand\PSL{\operatorname{PSL}}
+\newcommand\Res{\operatorname{Res}}
+\newcommand\sgn{\operatorname{sgn}}
+\newcommand\SL{\operatorname{SL}}
+\newcommand\Tor{\operatorname{Tor}}
+\newcommand\tors{\operatorname{tors}}
+\newcommand\tr{\operatorname{tr}}\newcommand\Tr{\operatorname{Tr}}
+\newcommand\Tra{\operatorname{Tra}}
+\newcommand\CF{\operatorname{CF}}
+\newcommand\HC{\operatorname{HC}}
+\newcommand\T{\ensuremath{\mathbb T}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\fp}{{\mathfrak{p}}}
+\newcommand{\fc}{{\mathfrak{c}}}
+\newcommand{\fm}{{\mathfrak{m}}}
+\newcommand{\fn}{{\mathfrak{n}}}
+\newcommand{\fa}{{\mathfrak{a}}}
+\newcommand{\fq}{{\mathfrak{q}}}
+\newcommand{\cU}{{\mathcal{U}}}
+\newcommand{\cV}{{\mathcal{V}}}
+\newcommand{\cE}{{\mathcal{E}}}
+\newcommand{\cF}{{\mathcal{F}}}
+\newcommand{\fl}{{\mathfrak{l}}}
+\newcommand{\tto}[1]{%
+\ifthenelse{\equal{#1}{}}{\to}{\stackrel{#1}{\to}}}
+\newcommand{\cB}{{\mathcal{B}}}
+
+%--------------------------------------------------------------------------------------------------
+% s\'{\i}mbol de Legendre
+\newcommand\leg[2]{\ensuremath{\displaystyle{\bigg(\frac{\smash[t]{#1}}{\smash[b]{#2}}\bigg)}}}
+%--------------------------------------------------------------------------------------------------
+% enters m\`{o}dul n i grup multiplicatiu
+\newcommand\Zn[1]{\ensuremath{\mathbb Z/#1\mathbb Z}}
+\newcommand\Mn[1]{\ensuremath{(\mathbb Z/#1\mathbb Z)^*}}
+%--------------------------------------------------------------------------------------------------
+
+%--------------------------------------------------------------------------------------------------
+\newcommand\acc[2]{\ensuremath{{}^{#1}\hskip-0.1ex{#2}}}
+\newcommand\accl[2]{\ensuremath{{{\phantom{\big|}}}^{#1}\hskip-0.2ex{#2}}}
+\newcommand\acch[2]{\ensuremath{{{\phantom{\big|}}}^{#1}\hskip-0.1ex{#2}}}
+%---------------------------------------------------------------------------------------------------
+
+
+\newcommand{\mtx}[4]{\left(\begin{matrix}#1&#2\\#3&#4\end{matrix}\right)}
+\newcommand{\mat}[1]{\left(\begin{matrix}#1\end{matrix}\right)}
+\newcommand{\smat}[1]{\left(\begin{smallmatrix}#1\end{smallmatrix}\right)}
+\newcommand{\smtx}[4]{\left(\begin{smallmatrix}#1&#2\\#3&#4\end{smallmatrix}\right)}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\slims}[4]{\left\{\begin{smallmatrix}#2&#4\\#1&#3\end{smallmatrix}\right\}}
+\newcommand{\tns}{\otimes}
+\newcommand{\colvec}[2]{\left(\begin{smallmatrix}#1\\#2\end{smallmatrix}\right)}
+
+\def\M{\operatorname{M}}
+\def\B{\mathcal Q}\def\D{\mathcal D}\def\X{\mathcal X}
+\def\Fb{{\overline F}}\def\kb{{\overline k}}
+\def\op{\operatorname{op}}
+\def\wa{\widetilde\alpha}
+\def\alg{\operatorname{alg}}
+\def\p{\mathfrak p}
+\def\P{\mathbb P}
+\newcommand{\comp}{\begin{picture}(6,5)(-3,-2)\put(0,1){\circle{2}} \end{picture}}\def\circ{\comp}
+\def\fN{\mathfrak N}
+\def\cN{\mathcal N}
+\def\ol{\overline}
+\def\res{\operatorname{res}}
+\def\ord{\operatorname{ord}}
+
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\lla}{\longleftarrow}
+\newcommand{\fixme}[1]{{\footnote{{\bf FIXME: }#1}}}
+
+% Marc
+\newcommand{\QQ}{\Q}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\ZZ}{\Z}
+\newcommand{\fd}{\mathfrak d}
+\def\fD{\mathfrak{D}}
+
+\def\Xint#1{\mathchoice
+{\XXint\displaystyle\textstyle{#1}}%
+{\XXint\textstyle\scriptstyle{#1}}%
+{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+\vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+
+
+\begin{document}
+
+\title[Computing equations of elliptic curves via $p$-adic methods]{Computing equations of modular elliptic curves over number fields of arbitrary signature via $p$-adic methods}
+
+%    Only \author and \address are required; other information is
+%    optional.  Remove any unused author tags.
+
+%    author one information
+
+\author{Xavier Guitart}
+\address{Institut f\"ur Experimentelle Mathematik\\
+Universit\"at Duisburg--Essen\\
+Germany}
+\email{xevi.guitart@gmail.com}
+\urladdr{https://www.uni-due.de/~hx0149/}
+\thanks{The first author is supported by SFB/TR 45}
+
+\author{Marc Masdeu}
+\address{Mathematics Institute \\
+University of Warwick \\
+%Coventry, CV4 7AL\\
+United Kingdom}
+\email{M.Masdeu@warwick.ac.uk}
+\urladdr{http://warwick.ac.uk/mmasdeu/}
+
+\author{Mehmet Haluk \c{S}eng\"un}
+\urladdr{http://haluksengun.staff.sheffield.ac.uk}
+\address{School of Mathematics and Statistics, Hicks Building, University of Sheffield, Sheffield, S3 7RH, UK}
+\email{M.Sengun@sheffield.ac.uk}
+
+
+
+%    \subjclass is required.
+\subjclass[2010]{11G40 (11F41, 11Y99)}
+
+\date{\today}
+
+\dedicatory{}
+\maketitle 
+
+
+\section{Tables}
+\input{output_file_tr_2.tex}
+\newpage
+\input{output_file_tr_3.tex}
+\newpage
+\input{output_file_atr_2.tex}
+\newpage
+\input{output_file_atr_3.tex}
+\newpage
+\input{output_file_atr_4.tex}
+
+\end{document}
